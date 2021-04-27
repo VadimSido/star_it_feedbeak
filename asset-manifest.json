@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/star_it_feedbeak/static/css/main.3a8dbfbe.chunk.css",
+    "main.js": "/star_it_feedbeak/static/js/main.3b93940b.chunk.js",
+    "main.js.map": "/star_it_feedbeak/static/js/main.3b93940b.chunk.js.map",
+    "runtime-main.js": "/star_it_feedbeak/static/js/runtime-main.011cf97e.js",
+    "runtime-main.js.map": "/star_it_feedbeak/static/js/runtime-main.011cf97e.js.map",
+    "static/js/2.0e4582c5.chunk.js": "/star_it_feedbeak/static/js/2.0e4582c5.chunk.js",
+    "static/js/2.0e4582c5.chunk.js.map": "/star_it_feedbeak/static/js/2.0e4582c5.chunk.js.map",
+    "static/js/3.e723471c.chunk.js": "/star_it_feedbeak/static/js/3.e723471c.chunk.js",
+    "static/js/3.e723471c.chunk.js.map": "/star_it_feedbeak/static/js/3.e723471c.chunk.js.map",
+    "index.html": "/star_it_feedbeak/index.html",
+    "static/css/main.3a8dbfbe.chunk.css.map": "/star_it_feedbeak/static/css/main.3a8dbfbe.chunk.css.map",
+    "static/js/2.0e4582c5.chunk.js.LICENSE.txt": "/star_it_feedbeak/static/js/2.0e4582c5.chunk.js.LICENSE.txt",
+    "static/media/icon_camera.22577b2f.svg": "/star_it_feedbeak/static/media/icon_camera.22577b2f.svg",
+    "static/media/logo_silpo.d105612b.png": "/star_it_feedbeak/static/media/logo_silpo.d105612b.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.011cf97e.js",
+    "static/js/2.0e4582c5.chunk.js",
+    "static/css/main.3a8dbfbe.chunk.css",
+    "static/js/main.3b93940b.chunk.js"
+  ]
+}
