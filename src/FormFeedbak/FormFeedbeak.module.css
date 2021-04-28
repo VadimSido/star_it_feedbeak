@@ -1,0 +1,125 @@
+.container {
+    max-width: 100%;
+    min-height: 40vh;
+    background: linear-gradient(to right, #d4e0d4, #72db72);
+}
+.containerForm {
+    width: 100%;
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 1.5em;
+    color: #030c06;
+}
+.imgCamera {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    padding: 0;
+    border: 0;
+    margin: 20px 20px 20px 0;
+}
+.imgCamera:focus {
+    outline: none;
+}
+.labelBox {
+    display: flex;
+    align-items: center;
+}
+.inputBox {
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+.feedbeakText:focus {
+    outline: none;
+}
+.feedbeakText {
+    position: relative;
+    width: 60%;
+    margin-right: 20%;
+    height: 80px;
+    border: none;
+    font-size: 24px;
+    color: #030c06;
+    border-bottom: 2px solid #021a02;
+    background: inherit;
+}
+.feedbeakText::-webkit-input-placeholder {
+    position: absolute;
+    bottom : 5%;
+    left: 39%;
+    color: #1a501a;
+    font-size: 36px;
+    text-transform: uppercase;
+}
+.sendButton {
+    width: 30vw;
+    height: 80px;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    border: 5px double #ffffff;
+    border-radius: calc(20vw/2);
+    background: inherit;
+    font-size: 36px;
+    color: #266926;
+}
+.sendButton:focus {
+    outline: none;
+}
+.sendButton a:-webkit-any-link {
+    color: #266926;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .containerForm {
+        font-size: 18px;
+    }
+    .imgCamera {
+        width: 70px;
+        height: 70px;
+    }
+    .feedbeakText {
+        font-size: 18px;
+    }
+    .feedbeakText::-webkit-input-placeholder {
+        font-size: 24px;
+    }
+    .sendButton {
+        font-size: 24px;
+        height: 50px;
+        margin-top: 50px;
+    }
+}
+
+
+@media only screen and (max-width: 414px) {
+    .containerForm {
+        font-size: 12px;
+    }
+    .inputBox {
+        width: 15px;
+        height: 15px;
+    }
+    .imgCamera {
+        width: 50px;
+        height: 50px;
+    }
+    .feedbeakText {
+        font-size: 12px;
+        height: 40px;
+    }
+    .feedbeakText::-webkit-input-placeholder {
+        font-size: 16px;
+    }
+    .sendButton {
+        font-size: 16px;
+        height: 50px;
+        margin-top: 20px;
+    }
+}

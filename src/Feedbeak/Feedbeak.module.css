@@ -1,0 +1,101 @@
+.container {
+    width: 100%;
+    min-height: 50vh;
+}
+.containerRating {
+    max-width: 100%;
+    min-height: 20vh;
+    font-size: 36px;
+    color: #026926;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(to right, #72db72, #d4e0d4);
+}
+.rating:focus {
+    outline: none;
+}
+.containerInfo {
+    min-height: 30vh;
+    background: linear-gradient(to right, #d4e0d4, #72db72);
+    font-size: 36px;
+    color: #026926;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.containerPoint {
+    display: flex;
+    flex-direction: row;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.point {
+    flex-grow: 2;
+    text-align: left;
+    padding-left: 10%;
+}
+.point p {
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logoPoint {
+    width: 60%;
+    height: auto;
+    border-radius: 10px;
+}
+.pointText, .clockText{
+    font-size: 24px;
+    color: #030c06;
+}
+.clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clockLogo {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+@media only screen and (max-width:600px) {
+    .pointText, .clockText{
+        font-size: 18px;
+    }  
+    .containerInfo {
+        font-size: 24px;
+    }
+    .containerPoint {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .containerRating {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    .pointText, .clockText{
+        font-size: 12px;
+    }  
+    .containerInfo {
+        font-size: 16px;
+    }
+    .containerPoint {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .containerRating {
+        font-size: 16px;
+    }
+}  

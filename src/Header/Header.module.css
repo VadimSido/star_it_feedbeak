@@ -1,0 +1,32 @@
+.container {
+    max-width: 100%;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(to right, #72db72, #d4e0d4);
+}
+.link {
+    text-decoration: none;
+    color : #026926;
+    font-size: 36px;
+}
+.active {
+    text-decoration: underline 5px solid#026926;
+}
+
+@media only screen and (max-width: 600px) {
+    .link {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    .link {
+        font-size: 16px;
+    }
+    .active {
+        text-decoration: underline 2px solid#026926;
+    }
+}
