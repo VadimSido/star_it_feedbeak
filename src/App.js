@@ -4,8 +4,8 @@ import {
   BrowserRouter as Router,
   Route
  } from "react-router-dom";
-import Header from "./Header";
-import QRcodePoint from "./QRcodePoint";
+import Header from "./components/Header";
+import QRcodePoint from "./components/QRcodePoint";
 
 function App() {
 
@@ -13,7 +13,7 @@ function App() {
   return (
     <Router className="App">
       <Header />
-      <Route path="/QR-code/:idBisnesses/:idPoint">
+      <Route path="/info/:idBisnesses/:idPoint">
         <QRcodePoint />
       </Route>
     </Router>

@@ -1,21 +1,6 @@
 .container {
     width: 100%;
-    min-height: 50vh;
-}
-.containerRating {
-    max-width: 100%;
-    min-height: 20vh;
-    font-size: 36px;
-    color: #026926;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background: linear-gradient(to right, #72db72, #d4e0d4);
-}
-.rating:focus {
-    outline: none;
+
 }
 .containerInfo {
     min-height: 30vh;
@@ -79,9 +64,6 @@
         padding-top: 30px;
         padding-bottom: 30px;
     }
-    .containerRating {
-        font-size: 24px;
-    }
 }
 
 @media only screen and (max-width: 414px) {
@@ -94,8 +76,5 @@
     .containerPoint {
         padding-top: 10px;
         padding-bottom: 10px;
-    }
-    .containerRating {
-        font-size: 16px;
     }
 }  

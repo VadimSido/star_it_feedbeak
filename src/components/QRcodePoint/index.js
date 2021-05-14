@@ -8,15 +8,15 @@ import Feedbeak from '../Feedbeak';
 import { useParams } from "react-router-dom";
 import ThanksForReview from "../ThanksForReview";
 import FormFeedbeak from '../FormFeedbak';
-import logo_silpo from "../assets/logo_silpo.png"; 
+import logo_silpo from "../../assets/logo_silpo.png"; 
  
 
 const QRcodePoint = () => {
-    const {idBisnesses} = useParams();
+{/*    const {idBisnesses} = useParams();
     const {idPoint} = useParams();
     console.log(idBisnesses);
-
-    const [countStar,setCountStar] = useState(5);    
+*/}
+    const [countStar,setCountStar] = useState(0);    
     const ratingChanged = (newRating) => {
         setCountStar(newRating);
       };
@@ -26,9 +26,9 @@ const QRcodePoint = () => {
           setTextFeedbeak(e.target.value);
       };
     
-    const urlBisnesses = 'www.star.it/api/business/' + idBisnesses; 
+{/*    const urlBisnesses = 'www.star.it/api/business/' + idBisnesses; 
     const urlPoint = 'www.star.it/api/fbo/' + idBisnesses + '/' + idPoint; 
-
+    */}
     const [error, setError] = useState(null);
 {/*    const [isLoaded, setIsLoaded] = useState(false); */}
     const [isLoaded, setIsLoaded] = useState(true);
@@ -58,19 +58,19 @@ const QRcodePoint = () => {
     console.log(jsonFeedbeak);
    
     
-    if (error) {
+    {/*if (error) {
         return <div>Error: {error.message}</div>
     }
         else if (!isLoaded) {
             return <div>Loading...</div>
         }
-            else {
+    else {    */}
                 return (
                     <Router>
                         <Switch>
-                            <Route path="/QR-code/silpo/334455">
-                                <Feedbeak onChange={ratingChanged} logo_bisnesses={logo_silpo} />
-                                <FormFeedbeak value={textFeedbeak} onChange={onChangeFeedbeak} />
+                            <Route path="/info/silpo/334455">
+                                <Feedbeak logo_bisnesses={logo_silpo} />
+                                <FormFeedbeak textFeedbeak={textFeedbeak} onChangeText={onChangeFeedbeak} onChangeRati={ratingChanged} countStar={countStar} />
                             </Route>
                             <Route path="/report">
                                 <ThanksForReview countStar={countStar} logo_bisnesses={logo_silpo} feedbeakToJson={feedbeakToJson} />
@@ -79,7 +79,8 @@ const QRcodePoint = () => {
                     </Router>  
 
                 );
-        }
 }
+
+
 
 export default QRcodePoint;
