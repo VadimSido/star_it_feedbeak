@@ -7,6 +7,9 @@ import ImageFeedback from "../ImageFeedback";
 
 const FormFeedbeak = ({ textFeedbeak, onChangeText, onChangeRati, countStar, onClickCam }) => {
 
+    const [onShow, setOnShow] = useState(true);
+    const handleStylesShow = () => {setOnShow(false)};
+
     return (
         <div className={styles.container}>
             <div className={styles.containerRating}>
@@ -31,9 +34,17 @@ const FormFeedbeak = ({ textFeedbeak, onChangeText, onChangeRati, countStar, onC
                     </div>
                 </Link>
                 <textarea name="feedbeak" className={styles.feedbeakText} value={textFeedbeak} onChange={onChangeText} placeholder="feedbeak"></textarea>
+                <p className={` ${
+                    onShow ? styles.noShow : styles.textShow
+                }`
+                } >
+                    Enter stars and (or) write feedback (write more than 10 letters less than 150)
+                </p>
                 {((countStar > 0) && ((textFeedbeak.length == 0) || (textFeedbeak.length > 10) && (textFeedbeak.length < 150)))
-                    ? <button className={styles.sendButton} ><Link to='/report'><strong>SEND</strong></Link></button>
-                    : <button className={styles.sendButton} disabled><strong>SEND</strong></button>
+                    ? <div className={styles.sendButton} >
+                            <Link to='/report'><strong>SEND</strong></Link>
+                      </div>
+                    : <div className={styles.sendButton} onClick={handleStylesShow}><strong>SEND</strong></div>
                 }
             </form>
         </div>

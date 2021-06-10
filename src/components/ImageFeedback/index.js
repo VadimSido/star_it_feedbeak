@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import Webcam from 'react-webcam';
 import styles from './ImageFeedback.module.css';
 import {Link} from 'react-router-dom';
@@ -7,13 +7,13 @@ const WebcamComponent = () => <Webcam />;
 const videoConstraints = {
     width: '1024px',
     height: 'auto',
-    facingMode: 'user',
+    facingMode: {exact : 'environment'},
 };
 
 const ImageFeedback = ({ setSrcImg, srcImg }) => {
-    const webcamRef = React.useRef(null);
+    const webcamRef = useRef(null);
 
-    const handlePhoto = React.useCallback(
+    const handlePhoto = useCallback(
         () => {
             const imageScr = webcamRef.current.getScreenshot();
             setSrcImg(imageScr);
@@ -23,15 +23,33 @@ const ImageFeedback = ({ setSrcImg, srcImg }) => {
 
     const handleNewPhoto = () => {setSrcImg('');}
 
+    const [deviceId, setDeviceId] = useState({});
+    const [devices, setDevices] = useState([]);
+
+    const handleDevices = useCallback(
+        mediaDevices =>
+            setDevices(mediaDevices.filter(({kind}) => kind ==='videoinput')),
+        [setDevices]
+    );
+
+    useEffect(
+        () => {
+            navigator.mediaDevices.enumerateDevices().then(handleDevices);
+        },
+        [handleDevices]
+    );
+
 
     return (
+        <>
+        {devices.map((device, key) => (
         <div className={styles.container}>
             { srcImg == ''
                 ? <Webcam
                     audio={false}
                     ref={webcamRef}
                     screenshotFormat={'image/jpeg'}
-                    videoConstraints={videoConstraints} />
+                    videoConstraints={{deviceId: device.deviceId}} />
                 : <img src={srcImg} />
             }
             <div className={styles.buttonPhoto}>
@@ -49,7 +67,11 @@ const ImageFeedback = ({ setSrcImg, srcImg }) => {
             <button className={styles.sendButton}>
                 <Link to='/report'>Send picture</Link>
             </button>
+            {device.label ||`Device ${key = 1}`}
         </div>
+    
+        ))};
+        </>
     );
 };
 

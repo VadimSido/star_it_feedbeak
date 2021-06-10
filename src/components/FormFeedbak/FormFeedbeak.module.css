@@ -15,7 +15,7 @@
 }
 .containerRating {
     max-width: 100%;
-    min-height: 20vh;
+    min-height: 18vh;
     font-size: 36px;
     color: #026926;
     text-align: center;
@@ -72,6 +72,9 @@
 .sendButton {
     width: 30vw;
     height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 50px;
     margin-right: auto;
     margin-left: auto;
@@ -87,6 +90,19 @@
 .sendButton a:-webkit-any-link {
     color: #266926;
     text-decoration: none;
+}
+.textShow {
+    width: 80%;
+    text-align: center;
+    font-size: 12px;
+    margin: 10px auto 0;
+}
+.noShow {
+    width: 80%;
+    text-align: center;
+    font-size: 12px;
+    margin: 10px auto;
+    visibility: hidden;
 }
 
 @media only screen and (max-width: 600px) {
@@ -110,6 +126,9 @@
     }
     .containerRating {
         font-size: 24px;
+    }
+    .textShow, .noShow {
+        font-size: 8px;
     }
 }
 
