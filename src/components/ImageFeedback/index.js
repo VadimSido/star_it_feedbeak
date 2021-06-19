@@ -19,10 +19,9 @@ const ImageFeedback = ({ imagePhoto, setImagePhoto, srcImg, setSrcImg }) => {
     const [facingMode, setFacingMode] = useState(facingUser);
     const handleSwitchCamera = () => {
         setFacingMode(
-            prevState =>
-                prevState === facingUser
-                    ? facingUser
-                    : facingEnvironment
+            facingMode === facingUser
+                ? facingEnvironment
+                : facingUser
         );
     };
 
@@ -52,9 +51,9 @@ const ImageFeedback = ({ imagePhoto, setImagePhoto, srcImg, setSrcImg }) => {
     }
     else {
         return (
-            <div className={styles.container}>
+            <div>
                 {imagePhoto == ''
-                    ? <div>
+                    ? <div className={styles.container}>
                         <Webcam
                             className={styles.img}
                             audio={false}
@@ -62,32 +61,33 @@ const ImageFeedback = ({ imagePhoto, setImagePhoto, srcImg, setSrcImg }) => {
                             screenshotFormat={'image/jpeg'}
                             videoConstraints={{
                                 ...videoConstraints,
-                                facingMode}} />
+                                facingMode
+                            }} />
                         <div className={styles.buttonPhoto}>
                             <button
                                 className={styles.photoButton}
                                 onClick={handlePhoto}>
-                                    Take a picture
+                                Take a picture
                             </button>
                             <button
                                 className={styles.photoButton}
                                 onClick={handleSwitchCamera}>
-                                    Switch camera
+                                Switch camera
                             </button>
                         </div>
                     </div>
-                    : <div>
+                    : <div className={styles.container}>
                         <img src={imagePhoto} className={styles.img} />
                         <div className={styles.buttonPhoto}>
-                            <button 
-                                className={styles.photoButton} 
+                            <button
+                                className={styles.photoButton}
                                 onClick={addImgArray}>
-                                    <Link to='/info/silpo/334455'>Save picture</Link>
+                                <Link to='/info/silpo/334455'>Save picture</Link>
                             </button>
                             <button
                                 className={styles.photoButton}
                                 onClick={handleNewPhoto}>
-                                    Create a new picture
+                                Create a new picture
                                 </button>
                         </div>
                     </div>
