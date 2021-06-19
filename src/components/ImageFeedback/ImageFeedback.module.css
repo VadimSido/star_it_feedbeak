@@ -6,9 +6,9 @@
     justify-content: center;
     background: linear-gradient(to right, #72db72, #d4e0d4);
 }
-.container > video, img {
+.img {
     height: auto;
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
 }
 .buttonPhoto {
@@ -50,8 +50,13 @@
     color: #266926;
     text-decoration: none;
 }
+.noMorePhoto {
+    text-align: center;
+    font-size: 35px;
+    margin-top: 50px;
+}
 
-@media only screen and (max-width: 750px ) {
+@media only screen and (max-width: 768px ) {
     .photoButton {
         font-size: 16px;
     }

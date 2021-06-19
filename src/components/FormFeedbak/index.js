@@ -5,10 +5,27 @@ import { Link } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import ImageFeedback from "../ImageFeedback";
 
-const FormFeedbeak = ({ textFeedbeak, onChangeText, onChangeRati, countStar, onClickCam }) => {
+const FormFeedbeak = ({ textFeedbeak, onChangeText,
+    onChangeRati, countStar, onClickCamera,
+    cameraOn, srcImg, setSrcImg }) => {
 
     const [onShow, setOnShow] = useState(true);
-    const handleStylesShow = () => {setOnShow(false)};
+    const handleStylesShow = () => { setOnShow(false) };
+
+    const deleteImage = (i) => {
+                setSrcImg( oldArray => oldArray.filter((srcImg,index) => index !==i))
+    };
+
+    const imageScr = srcImg;
+    const itemImg = imageScr.map((imgList, i) =>
+        <div className={styles.imageItem} key={i}>
+            <img src={imgList} alt='image' className={styles.imageBox} />
+            <div className={styles.deleteImg} onClick={() => {deleteImage(i)}} >
+                X
+            </div>
+        </div>
+    );
+    
 
     return (
         <div className={styles.container}>
@@ -28,22 +45,30 @@ const FormFeedbeak = ({ textFeedbeak, onChangeText, onChangeRati, countStar, onC
                     I want to get answer
                         <input type="checkbox" name="answer" value="answer" className={styles.inputBox} />
                 </label>
-                <Link to='/photo'>
-                    <div  onChange={onClickCam} className={styles.imgCamera}>
-                        <img src={logo_camera} alt="CAMERA"  />
+                <div className={styles.imgBox}>
+                    {cameraOn
+                        ? <Link to='/photo'>
+                            <div className={styles.imgCamera}>
+                                <img src={logo_camera} alt="CAMERA" />
+                            </div>
+                        </Link>
+                        : <div onClick={() => { onClickCamera(true) }} className={styles.imgCamera}>
+                            <img src={logo_camera} alt="CAMERA" />
+                        </div>}
+                    <div className={styles.itemImg}>
+                        {itemImg}
                     </div>
-                </Link>
+                </div>
                 <textarea name="feedbeak" className={styles.feedbeakText} value={textFeedbeak} onChange={onChangeText} placeholder="feedbeak"></textarea>
-                <p className={` ${
-                    onShow ? styles.noShow : styles.textShow
-                }`
+                <p className={` ${onShow ? styles.noShow : styles.textShow
+                    }`
                 } >
                     Enter stars and (or) write feedback (write more than 10 letters less than 150)
                 </p>
                 {((countStar > 0) && ((textFeedbeak.length == 0) || (textFeedbeak.length > 10) && (textFeedbeak.length < 150)))
                     ? <div className={styles.sendButton} >
-                            <Link to='/report'><strong>SEND</strong></Link>
-                      </div>
+                        <Link to='/report'><strong>SEND</strong></Link>
+                    </div>
                     : <div className={styles.sendButton} onClick={handleStylesShow}><strong>SEND</strong></div>
                 }
             </form>

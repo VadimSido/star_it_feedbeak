@@ -59,14 +59,10 @@ const QRcodePoint = () => {
     let jsonFeedbeak = JSON.stringify(feedbeakToJson);
     console.log(jsonFeedbeak);
 
-    const [webcamOnOff, setWebcamOnOff] = useState(true);
-    const cameraOnOff = (webcamOnOff) => {
-        setWebcamOnOff(!webcamOnOff);
-        console.log(webcamOnOff);
-    };
+    const [webcamOnOff, setWebcamOnOff] = useState(false);
+    const [imagePhoto, setImagePhoto] = useState('');
 
-    const [srcImg, setSrcImg] = useState('');
-    console.log(srcImg);
+    const [srcImg, setSrcImg] = useState([]);
 
     {/*if (error) {
         return <div>Error: {error.message}</div>
@@ -85,8 +81,10 @@ const QRcodePoint = () => {
                         onChangeText={onChangeFeedbeak}
                         onChangeRati={ratingChanged}
                         countStar={countStar}
-                        onClickCam={cameraOnOff}
+                        onClickCamera={setWebcamOnOff}
+                        cameraOn={webcamOnOff}
                         srcImg={srcImg}
+                        setSrcImg={setSrcImg}
                     />
                 </Route>
                 <Route path="/report">
@@ -97,8 +95,11 @@ const QRcodePoint = () => {
                 </Route>
                 <Route path="/photo">
                     <ImageFeedback
+                        imagePhoto={imagePhoto}
+                        setImagePhoto={setImagePhoto}
+                        srcImg={srcImg}
                         setSrcImg={setSrcImg}
-                        srcImg={srcImg} />
+                    />
                 </Route>
             </Switch>
         </Router>
