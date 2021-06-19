@@ -30,6 +30,7 @@ const QRcodePoint = () => {
     {/*    const urlBisnesses = 'www.star.it/api/business/' + idBisnesses; 
     const urlPoint = 'www.star.it/api/fbo/' + idBisnesses + '/' + idPoint; 
     */}
+    
     const [error, setError] = useState(null);
     {/*    const [isLoaded, setIsLoaded] = useState(false); */ }
     const [isLoaded, setIsLoaded] = useState(true);

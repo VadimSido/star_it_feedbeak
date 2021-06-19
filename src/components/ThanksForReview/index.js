@@ -32,7 +32,7 @@ const ThankForReview = ({ countStar, logo_bisnesses, feedbeakToJson, srcImg }) =
             redirect: 'follow'
         };
         fetch("https://reqres.in/api/users", optionRequest)
-            .then(res => console.log(res.json))
+            .then(res => console.log('11',res.json))
             .then(
                 (res) => {console.log(res)},
                 (error) => {setError(error)},

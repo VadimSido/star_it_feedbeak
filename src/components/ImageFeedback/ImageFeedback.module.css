@@ -16,27 +16,10 @@
     flex-direction: row;
     justify-content: space-around;
 }
-.sendButton {
-    width: 40vw;
-    height: 80px;
-    margin: 40px auto;
-    border: 5px double #ffffff;
-    border-radius: calc(20vw/2);
-    background: inherit;
-    font-size: 36px;
-    color: #266926;
-}
-.sendButton:focus {
-    outline: none;
-}
-.sendButton a:-webkit-any-link {
-    color: #266926;
-    text-decoration: none;
-}
 .photoButton {
     width: 30vw;
     height: 50px;
-    margin: 20px auto 0px;
+    margin: 20px auto;
     border: 5px double #ffffff;
     border-radius: calc(20vw/2);
     background: inherit;
