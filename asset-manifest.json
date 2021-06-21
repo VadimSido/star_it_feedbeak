@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/star_it_feedbeak/static/css/main.b331c21b.chunk.css",
-    "main.js": "/star_it_feedbeak/static/js/main.593b1ed5.chunk.js",
-    "main.js.map": "/star_it_feedbeak/static/js/main.593b1ed5.chunk.js.map",
+    "main.css": "/star_it_feedbeak/static/css/main.cf81d30e.chunk.css",
+    "main.js": "/star_it_feedbeak/static/js/main.e3679f67.chunk.js",
+    "main.js.map": "/star_it_feedbeak/static/js/main.e3679f67.chunk.js.map",
     "runtime-main.js": "/star_it_feedbeak/static/js/runtime-main.b2bc336a.js",
     "runtime-main.js.map": "/star_it_feedbeak/static/js/runtime-main.b2bc336a.js.map",
     "static/js/2.55e43d3d.chunk.js": "/star_it_feedbeak/static/js/2.55e43d3d.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.84bfadd9.chunk.js": "/star_it_feedbeak/static/js/3.84bfadd9.chunk.js",
     "static/js/3.84bfadd9.chunk.js.map": "/star_it_feedbeak/static/js/3.84bfadd9.chunk.js.map",
     "index.html": "/star_it_feedbeak/index.html",
-    "static/css/main.b331c21b.chunk.css.map": "/star_it_feedbeak/static/css/main.b331c21b.chunk.css.map",
+    "static/css/main.cf81d30e.chunk.css.map": "/star_it_feedbeak/static/css/main.cf81d30e.chunk.css.map",
     "static/js/2.55e43d3d.chunk.js.LICENSE.txt": "/star_it_feedbeak/static/js/2.55e43d3d.chunk.js.LICENSE.txt",
     "static/media/icon_camera.22577b2f.svg": "/star_it_feedbeak/static/media/icon_camera.22577b2f.svg",
     "static/media/logo_silpo.d105612b.png": "/star_it_feedbeak/static/media/logo_silpo.d105612b.png"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.b2bc336a.js",
     "static/js/2.55e43d3d.chunk.js",
-    "static/css/main.b331c21b.chunk.css",
-    "static/js/main.593b1ed5.chunk.js"
+    "static/css/main.cf81d30e.chunk.css",
+    "static/js/main.e3679f67.chunk.js"
   ]
 }
