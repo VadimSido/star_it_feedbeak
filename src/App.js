@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -9,12 +9,19 @@ import QRcodePoint from "./components/QRcodePoint";
 
 function App() {
 
+  const [textFeedbeak, setTextFeedbeak] = useState('');
+  const onChangeFeedbeak = (e) => {
+      setTextFeedbeak(e.target.value);
+  }
     
   return (
     <Router className="App">
       <Header />
       <Route path="/info/:idBisnesses/:idPoint">
-        <QRcodePoint />
+        <QRcodePoint 
+          textFeedbeak={textFeedbeak}
+          onChangeFeedbeak={onChangeFeedbeak}
+        />
       </Route>
     </Router>
   );

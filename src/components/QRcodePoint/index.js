@@ -12,7 +12,7 @@ import logo_silpo from "../../assets/logo_silpo.png";
 import ImageFeedback from '../ImageFeedback';
 
 
-const QRcodePoint = () => {
+const QRcodePoint = ({textFeedbeak, onChangeFeedbeak}) => {
     {/*    const {idBisnesses} = useParams();
     const {idPoint} = useParams();
     console.log(idBisnesses);
@@ -22,10 +22,6 @@ const QRcodePoint = () => {
         setCountStar(newRating);
     };
 
-    const [textFeedbeak, setTextFeedbeak] = useState('');
-    const onChangeFeedbeak = (e) => {
-        setTextFeedbeak(e.target.value);
-    };
 
     {/*    const urlBisnesses = 'www.star.it/api/business/' + idBisnesses; 
     const urlPoint = 'www.star.it/api/fbo/' + idBisnesses + '/' + idPoint; 

@@ -99,13 +99,6 @@
     font-size: 12px;
     margin: 10px auto 0;
 }
-.noShow {
-    width: 80%;
-    text-align: center;
-    font-size: 12px;
-    margin: 10px auto;
-    visibility: hidden;
-}
 .imgBox {
     display: flex;
     flex-direction: column;

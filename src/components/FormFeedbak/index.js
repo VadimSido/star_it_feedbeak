@@ -9,9 +9,6 @@ const FormFeedbeak = ({ textFeedbeak, onChangeText,
     onChangeRati, countStar, onClickCamera,
     cameraOn, srcImg, setSrcImg }) => {
 
-    const [onShow, setOnShow] = useState(true);
-    const handleStylesShow = () => { setOnShow(false) };
-
     const deleteImage = (i) => {
                 setSrcImg( oldArray => oldArray.filter((srcImg,index) => index !==i))
     };
@@ -60,16 +57,14 @@ const FormFeedbeak = ({ textFeedbeak, onChangeText,
                     </div>
                 </div>
                 <textarea name="feedbeak" className={styles.feedbeakText} value={textFeedbeak} onChange={onChangeText} placeholder="feedbeak"></textarea>
-                <p className={` ${onShow ? styles.noShow : styles.textShow
-                    }`
-                } >
-                    Enter stars and (or) write feedback (write more than 10 letters less than 150)
+                <p className={styles.textShow} >
+                    Enter stars and (or) write feedback (write more than 10 letters less than 200)
                 </p>
-                {((countStar > 0) && ((textFeedbeak.length == 0) || (textFeedbeak.length > 10) && (textFeedbeak.length < 150)))
+                {((countStar > 0) && ((textFeedbeak.length == 0) || (textFeedbeak.length > 10) && (textFeedbeak.length < 200)))
                     ? <div className={styles.sendButton} >
                         <Link to='/report'><strong>SEND</strong></Link>
                     </div>
-                    : <div className={styles.sendButton} onClick={handleStylesShow}><strong>SEND</strong></div>
+                    : <div className={styles.sendButton}><strong>SEND</strong></div>
                 }
             </form>
         </div>
