@@ -8,50 +8,76 @@ import Feedbeak from '../Feedbeak';
 import { useParams } from "react-router-dom";
 import ThanksForReview from "../ThanksForReview";
 import FormFeedbeak from '../FormFeedbak';
-import logo_silpo from "../../assets/logo_silpo.png";
 import ImageFeedback from '../ImageFeedback';
 
 
 const QRcodePoint = ({textFeedbeak, onChangeFeedbeak}) => {
-    {/*    const {idBisnesses} = useParams();
+    const {idBusiness} = useParams();
     const {idPoint} = useParams();
-    console.log(idBisnesses);
-*/}
+
     const [countStar, setCountStar] = useState(0);
     const ratingChanged = (newRating) => {
         setCountStar(newRating);
     };
 
 
-    {/*    const urlBisnesses = 'www.star.it/api/business/' + idBisnesses; 
-    const urlPoint = 'www.star.it/api/fbo/' + idBisnesses + '/' + idPoint; 
-    */}
-    
+    const urlBusiness = 'https://starit-api.herokuapp.com/api/business/' + idBusiness; 
+    const urlPoint = 'https://starit-api.herokuapp.com/api/fbo/' + idBusiness + '/' + idPoint;
+    const pathRoute = '/info/' + idBusiness + '/' + idPoint;
+     
     const [error, setError] = useState(null);
-    {/*    const [isLoaded, setIsLoaded] = useState(false); */ }
-    const [isLoaded, setIsLoaded] = useState(true);
-    const [bisnesses, setBisnesses] = useState({});
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [business, setBusiness] = useState({});
+    const [point, setPoint] = useState({});
 
-    {/*    useEffect(() => {
-        fetch({urlBisnesses})
+    const [businessName, setBusinessName] = useState('');
+    const [businessAddress, setBusinessAddress] = useState('');
+    const [businessLogo, setBusinesLogo] = useState('');
+    const [pointName, setPointName] = useState('');
+
+    const [answer, setAnswer] = useState(false);
+    
+        useEffect(() => {
+        fetch(urlBusiness)
             .then(rez => rez.json())
             .then(
                 (rezult) => {
                     setIsLoaded(true);
-                    setBisnesses(rezult);
+                    setBusiness(rezult);
+                    setBusinessName(rezult[0].name);
+                    setBusinessAddress(rezult[0].address);
+                    setBusinesLogo(rezult[0].logo);
+                },
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }
+            );
+    },[]);
+
+    useEffect(() => {
+        fetch(urlPoint)
+            .then(rez => rez.json())
+            .then(
+                (rezult) => {
+                    setIsLoaded(true);
+                    setPoint(rezult);
+                    setPointName(rezult[0].object_name);
                 },
                 (error) => {
                     setIsLoaded(true);
                     setError(error);
                 }
             )
-    },[])  */};
+    },[]);
+
 
     let feedbeakToJson = {
         rate: countStar,
         date: new Date().toLocaleDateString(),
         time: new Date().toLocaleTimeString(),
         text: textFeedbeak,
+        answer: answer,
     };
     let jsonFeedbeak = JSON.stringify(feedbeakToJson);
     console.log(jsonFeedbeak);
@@ -61,20 +87,27 @@ const QRcodePoint = ({textFeedbeak, onChangeFeedbeak}) => {
 
     const [srcImg, setSrcImg] = useState([]);
 
-    {/*if (error) {
+    if (error) {
         return <div>Error: {error.message}</div>
     }
-        else if (!isLoaded) {
+    else if (!isLoaded) {
             return <div>Loading...</div>
         }
-    else {    */}
+    else {    
     return (
         <Router>
             <Switch>
-                <Route path="/info/silpo/334455">
-                    <Feedbeak logo_bisnesses={logo_silpo} />
+                <Route path={pathRoute}>
+                    <Feedbeak  
+                        businessName={businessName}
+                        businessAddress={businessAddress}
+                        businessLogo={businessLogo}
+                        pointName={pointName}
+                    />
                     <FormFeedbeak
                         textFeedbeak={textFeedbeak}
+                        setAnswer={setAnswer}
+                        answer={answer}
                         onChangeText={onChangeFeedbeak}
                         onChangeRati={ratingChanged}
                         countStar={countStar}
@@ -87,11 +120,12 @@ const QRcodePoint = ({textFeedbeak, onChangeFeedbeak}) => {
                 <Route path="/report">
                     <ThanksForReview
                         countStar={countStar}
-                        logo_bisnesses={logo_silpo}
+                        businessLogo={businessLogo}
                         feedbeakToJson={feedbeakToJson} />
                 </Route>
                 <Route path="/photo">
                     <ImageFeedback
+                        pathRoute={pathRoute}
                         imagePhoto={imagePhoto}
                         setImagePhoto={setImagePhoto}
                         srcImg={srcImg}
@@ -102,6 +136,7 @@ const QRcodePoint = ({textFeedbeak, onChangeFeedbeak}) => {
         </Router>
 
     );
+    };
 }
 
 

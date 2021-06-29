@@ -107,15 +107,16 @@
 .itemImg {
     display: flex;
     justify-content: center;
+    align-items: flex-end;
 }
 .imageItem {
-    width: 25%;
+    max-width: 25%;
     height: auto;
     border: 1px solid #026926;
 }
 .imageBox {
     width: 100%;
-    height: auto;
+    min-height: 15vh;
 }
 .deleteImg {
     background-color: white;

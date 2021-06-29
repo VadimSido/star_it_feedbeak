@@ -17,7 +17,7 @@ function App() {
   return (
     <Router className="App">
       <Header />
-      <Route path="/info/:idBisnesses/:idPoint">
+      <Route path="/info/:idBusiness/:idPoint">
         <QRcodePoint 
           textFeedbeak={textFeedbeak}
           onChangeFeedbeak={onChangeFeedbeak}

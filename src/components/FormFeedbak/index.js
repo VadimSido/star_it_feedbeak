@@ -3,11 +3,10 @@ import styles from "./FormFeedbeak.module.css";
 import logo_camera from "../../assets/icon_camera.svg";
 import { Link } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
-import ImageFeedback from "../ImageFeedback";
 
 const FormFeedbeak = ({ textFeedbeak, onChangeText,
     onChangeRati, countStar, onClickCamera,
-    cameraOn, srcImg, setSrcImg }) => {
+    cameraOn, srcImg, setSrcImg, setAnswer, answer }) => {
 
     const deleteImage = (i) => {
                 setSrcImg( oldArray => oldArray.filter((srcImg,index) => index !==i))
@@ -40,7 +39,7 @@ const FormFeedbeak = ({ textFeedbeak, onChangeText,
             <form className={styles.containerForm}>
                 <label className={styles.labelBox}>
                     I want to get answer
-                        <input type="checkbox" name="answer" value="answer" className={styles.inputBox} />
+                        <input type="checkbox" name="answer" onClick={() => setAnswer(!answer)} className={styles.inputBox} />
                 </label>
                 <div className={styles.imgBox}>
                     {cameraOn
@@ -51,7 +50,8 @@ const FormFeedbeak = ({ textFeedbeak, onChangeText,
                         </Link>
                         : <div onClick={() => { onClickCamera(true) }} className={styles.imgCamera}>
                             <img src={logo_camera} alt="CAMERA" />
-                        </div>}
+                        </div>
+                    }
                     <div className={styles.itemImg}>
                         {itemImg}
                     </div>

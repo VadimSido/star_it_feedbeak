@@ -1,10 +1,16 @@
-.container {
+.container, .containerBox {
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     background: linear-gradient(to right, #72db72, #d4e0d4);
+}
+.containerBox {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 90vh;
 }
 .img {
     height: auto;

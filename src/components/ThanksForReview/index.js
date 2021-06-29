@@ -14,7 +14,7 @@ const ThankForReview = ({ countStar, logo_bisnesses, feedbeakToJson, srcImg }) =
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ feedbeakToJson })
         };
-        fetch("https://reqres.in/api/users", requestOptions)
+        fetch("https://starit-api.herokuapp.com/api/feedback", requestOptions)
             .then(res => console.log(res.json))
             .then(
                 (res) => { console.log(res) },

@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import styles from "./Feedbeak.module.css";
 import logo_clock from "../../assets/logo_clock.png";
 
-const Feedbeak = ({logo_bisnesses}) => {
+const Feedbeak = ({businessLogo, businessName, businessAddress, pointName}) => {
     const [date,setDate] = useState(new Date());
 
     useEffect(() => {
@@ -12,29 +12,18 @@ const Feedbeak = ({logo_bisnesses}) => {
         }
     }, []);
 
-    let serverResponse = {
-        'silpo' : {
-            businessName : 'Silpo',
-            address : 'Kiyv',
-            imgLogo : {logo_bisnesses}
-        },
-        '334455' : {
-            type : 'room',
-            nameType : 'room #100'
-        }
-    }
-
     return(
         <div className={styles.container}>
             <div className={styles.containerInfo}>
                 <div className={styles.containerPoint}>
                     <div className={styles.point}>
-                        <p>Name : <span className={styles.pointText}>{serverResponse.silpo.businessName}</span></p>
-                        <p>Adress : <span className={styles.pointText}>{serverResponse.silpo.address}</span></p>
-                        <p>Object : <span className={styles.pointText}>{serverResponse[334455].nameType}</span></p>
+                        <p>Name : <span className={styles.pointText}>{businessName}</span></p>
+                        <p>Adress : <span className={styles.pointText}>{businessAddress}</span></p>
+                        <p>Object : <span className={styles.pointText}>{pointName}</span></p>
                     </div>
                     <div className={styles.logo}>
-                        <img src={logo_bisnesses} className={styles.logoPoint} alt="LOGO" />
+                        {businessLogo}
+{/*                       <img src={logo_bisnesses} className={styles.logoPoint} alt="LOGO" />*/}
                     </div>
                 </div>
                 <div className={styles.clock}>
