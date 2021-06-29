@@ -1,24 +1,27 @@
 {
   "files": {
-    "main.css": "/star_it_feedbeak/static/css/main.cf81d30e.chunk.css",
-    "main.js": "/star_it_feedbeak/static/js/main.e3679f67.chunk.js",
-    "main.js.map": "/star_it_feedbeak/static/js/main.e3679f67.chunk.js.map",
-    "runtime-main.js": "/star_it_feedbeak/static/js/runtime-main.b2bc336a.js",
-    "runtime-main.js.map": "/star_it_feedbeak/static/js/runtime-main.b2bc336a.js.map",
-    "static/js/2.55e43d3d.chunk.js": "/star_it_feedbeak/static/js/2.55e43d3d.chunk.js",
-    "static/js/2.55e43d3d.chunk.js.map": "/star_it_feedbeak/static/js/2.55e43d3d.chunk.js.map",
-    "static/js/3.84bfadd9.chunk.js": "/star_it_feedbeak/static/js/3.84bfadd9.chunk.js",
-    "static/js/3.84bfadd9.chunk.js.map": "/star_it_feedbeak/static/js/3.84bfadd9.chunk.js.map",
+    "main.css": "/star_it_feedbeak/static/css/main.67e41be2.chunk.css",
+    "main.js": "/star_it_feedbeak/static/js/main.091e9ca8.chunk.js",
+    "main.js.map": "/star_it_feedbeak/static/js/main.091e9ca8.chunk.js.map",
+    "runtime-main.js": "/star_it_feedbeak/static/js/runtime-main.6e17eaa2.js",
+    "runtime-main.js.map": "/star_it_feedbeak/static/js/runtime-main.6e17eaa2.js.map",
+    "static/css/2.f94bdb3a.chunk.css": "/star_it_feedbeak/static/css/2.f94bdb3a.chunk.css",
+    "static/js/2.dcc4ecac.chunk.js": "/star_it_feedbeak/static/js/2.dcc4ecac.chunk.js",
+    "static/js/2.dcc4ecac.chunk.js.map": "/star_it_feedbeak/static/js/2.dcc4ecac.chunk.js.map",
+    "static/js/3.e3a066ef.chunk.js": "/star_it_feedbeak/static/js/3.e3a066ef.chunk.js",
+    "static/js/3.e3a066ef.chunk.js.map": "/star_it_feedbeak/static/js/3.e3a066ef.chunk.js.map",
     "index.html": "/star_it_feedbeak/index.html",
-    "static/css/main.cf81d30e.chunk.css.map": "/star_it_feedbeak/static/css/main.cf81d30e.chunk.css.map",
-    "static/js/2.55e43d3d.chunk.js.LICENSE.txt": "/star_it_feedbeak/static/js/2.55e43d3d.chunk.js.LICENSE.txt",
-    "static/media/icon_camera.22577b2f.svg": "/star_it_feedbeak/static/media/icon_camera.22577b2f.svg",
-    "static/media/logo_silpo.d105612b.png": "/star_it_feedbeak/static/media/logo_silpo.d105612b.png"
+    "static/css/2.f94bdb3a.chunk.css.map": "/star_it_feedbeak/static/css/2.f94bdb3a.chunk.css.map",
+    "static/css/main.67e41be2.chunk.css.map": "/star_it_feedbeak/static/css/main.67e41be2.chunk.css.map",
+    "static/js/2.dcc4ecac.chunk.js.LICENSE.txt": "/star_it_feedbeak/static/js/2.dcc4ecac.chunk.js.LICENSE.txt",
+    "static/media/UploadIcon.svg": "/star_it_feedbeak/static/media/UploadIcon.469126df.svg",
+    "static/media/icon_camera.22577b2f.svg": "/star_it_feedbeak/static/media/icon_camera.22577b2f.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.b2bc336a.js",
-    "static/js/2.55e43d3d.chunk.js",
-    "static/css/main.cf81d30e.chunk.css",
-    "static/js/main.e3679f67.chunk.js"
+    "static/js/runtime-main.6e17eaa2.js",
+    "static/css/2.f94bdb3a.chunk.css",
+    "static/js/2.dcc4ecac.chunk.js",
+    "static/css/main.67e41be2.chunk.css",
+    "static/js/main.091e9ca8.chunk.js"
   ]
 }
