@@ -111,12 +111,12 @@
 }
 .imageItem {
     max-width: 25%;
-    height: auto;
+    height: 15vh;
     border: 1px solid #026926;
 }
 .imageBox {
     width: 100%;
-    min-height: 15vh;
+    height: 15vh;
 }
 .deleteImg {
     background-color: white;

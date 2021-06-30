@@ -2,7 +2,7 @@ import React, { useState, useRef, useCallback } from 'react';
 import Webcam from 'react-webcam';
 import ImageUploader from 'react-images-upload';
 import styles from './ImageFeedback.module.css';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 const facingUser = 'user';
 const facingEnvironment = 'environment'
@@ -13,6 +13,18 @@ const videoConstraints = {
     height: 'auto',
     facingMode: facingUser,
 };
+const fileContainerStyle = {
+    background: 'none',
+    boxShadow: 'none',
+};
+const buttonStyles = {
+    background: 'none',
+    width: '50vw',
+    height: '100px',
+    border: '5px double #ffffff',
+    color: '#266926',
+    fontSize: '20px',
+}
 
 const ImageFeedback = ({ imagePhoto, setImagePhoto, srcImg, setSrcImg, pathRoute }) => {
     const webcamRef = useRef(null);
@@ -66,8 +78,8 @@ const ImageFeedback = ({ imagePhoto, setImagePhoto, srcImg, setSrcImg, pathRoute
         return (
             <div>
                 {imagePhoto == ''
-                    ? <div>
-                        {(!onCamera)
+                    ? <div className={styles.containerBox}>
+{/*                        {(!onCamera)
                         ?<div className={styles.containerBox}>
                             <div>
                                 <button
@@ -75,42 +87,20 @@ const ImageFeedback = ({ imagePhoto, setImagePhoto, srcImg, setSrcImg, pathRoute
                                     onClick={handleOnCamera}>
                                     Camera
                             </button>
-                            </div>
+</div>*/}
                             <div>
                                 <ImageUploader
+                                    fileContainerStyle={fileContainerStyle}
+                                    buttonStyles={buttonStyles}
                                     withIcon={false}
                                     buttonText='Choose image'
                                     onChange={onDrop}
                                     imgExtension={['.jpg', '.gif', '.png', '.gif']}
                                     maxFileSize={5242880}
+                                    label=''
                                 />
                             </div>
-                        </div>
-                        : <div className={styles.container}>
-                                <Webcam
-                                    className={styles.img}
-                                    audio={false}
-                                    ref={webcamRef}
-                                    screenshotFormat={'image/jpeg'}
-                                    videoConstraints={{
-                                        ...videoConstraints,
-                                        facingMode
-                                    }} />
-                                <div className={styles.buttonPhoto}>
-                                    <button
-                                        className={styles.photoButton}
-                                        onClick={handlePhoto}>
-                                        Take a picture
-                                    </button>
-                                    <button
-                                        className={styles.photoButton}
-                                        onClick={handleSwitchCamera}>
-                                        Switch camera
-                                    </button>
-                                </div>
-                            </div>
-                            }
-                    </div>
+                    </div>    
                     : <div className={styles.container}>
                         <img src={imagePhoto} className={styles.img} />
                         <div className={styles.buttonPhoto}>
@@ -122,7 +112,7 @@ const ImageFeedback = ({ imagePhoto, setImagePhoto, srcImg, setSrcImg, pathRoute
                             <button
                                 className={styles.photoButton}
                                 onClick={handleNewPhoto}>
-                                Create a new picture
+                                New picture
                                     </button>
                         </div>
                     </div>

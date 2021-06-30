@@ -3,6 +3,7 @@ import styles from "./FormFeedbeak.module.css";
 import logo_camera from "../../assets/icon_camera.svg";
 import { Link } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
+import ImageUploader from 'react-images-upload';
 
 const FormFeedbeak = ({ textFeedbeak, onChangeText,
     onChangeRati, countStar, onClickCamera,
@@ -21,6 +22,10 @@ const FormFeedbeak = ({ textFeedbeak, onChangeText,
             </div>
         </div>
     );
+
+    const onDrop = (pictureFiles, pictureDataUrl) => {
+        setSrcImg(pictureDataUrl);
+    };
     
 
     return (
@@ -58,9 +63,9 @@ const FormFeedbeak = ({ textFeedbeak, onChangeText,
                 </div>
                 <textarea name="feedbeak" className={styles.feedbeakText} value={textFeedbeak} onChange={onChangeText} placeholder="feedbeak"></textarea>
                 <p className={styles.textShow} >
-                    Enter stars and (or) write feedback (write more than 10 letters less than 200)
+                    Enter stars and (or) write feedback (write more than 3 letters less than 200)
                 </p>
-                {((countStar > 0) && ((textFeedbeak.length == 0) || (textFeedbeak.length > 10) && (textFeedbeak.length < 200)))
+                {((countStar > 0) && ((textFeedbeak.length == 0) || (textFeedbeak.length > 3) && (textFeedbeak.length < 200)))
                     ? <div className={styles.sendButton} >
                         <Link to='/report'><strong>SEND</strong></Link>
                     </div>

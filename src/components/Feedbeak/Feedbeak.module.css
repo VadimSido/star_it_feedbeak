@@ -1,6 +1,5 @@
 .container {
     width: 100%;
-
 }
 .containerInfo {
     min-height: 30vh;
@@ -64,6 +63,9 @@
     .containerPoint {
         padding-top: 30px;
         padding-bottom: 30px;
+    }
+    .logo {
+        font-size: 12px;
     }
 }
 
