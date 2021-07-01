@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/star_it_feedbeak/static/css/main.a83f3550.chunk.css",
+    "main.css": "/star_it_feedbeak/static/css/main.df0d574a.chunk.css",
     "main.js": "/star_it_feedbeak/static/js/main.11d81e79.chunk.js",
     "main.js.map": "/star_it_feedbeak/static/js/main.11d81e79.chunk.js.map",
     "runtime-main.js": "/star_it_feedbeak/static/js/runtime-main.81601598.js",
@@ -12,7 +12,7 @@
     "static/js/3.77ba13bd.chunk.js.map": "/star_it_feedbeak/static/js/3.77ba13bd.chunk.js.map",
     "index.html": "/star_it_feedbeak/index.html",
     "static/css/2.f94bdb3a.chunk.css.map": "/star_it_feedbeak/static/css/2.f94bdb3a.chunk.css.map",
-    "static/css/main.a83f3550.chunk.css.map": "/star_it_feedbeak/static/css/main.a83f3550.chunk.css.map",
+    "static/css/main.df0d574a.chunk.css.map": "/star_it_feedbeak/static/css/main.df0d574a.chunk.css.map",
     "static/js/2.f2217867.chunk.js.LICENSE.txt": "/star_it_feedbeak/static/js/2.f2217867.chunk.js.LICENSE.txt",
     "static/media/UploadIcon.svg": "/star_it_feedbeak/static/media/UploadIcon.469126df.svg",
     "static/media/icon_camera.22577b2f.svg": "/star_it_feedbeak/static/media/icon_camera.22577b2f.svg"
@@ -21,7 +21,7 @@
     "static/js/runtime-main.81601598.js",
     "static/css/2.f94bdb3a.chunk.css",
     "static/js/2.f2217867.chunk.js",
-    "static/css/main.a83f3550.chunk.css",
+    "static/css/main.df0d574a.chunk.css",
     "static/js/main.11d81e79.chunk.js"
   ]
 }
