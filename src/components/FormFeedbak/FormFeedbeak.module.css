@@ -107,11 +107,10 @@
 .itemImg {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    margin-bottom: 10px;
 }
 .imageItem {
     max-width: 25%;
-    height: 15vh;
     border: 1px solid #026926;
 }
 .imageBox {
