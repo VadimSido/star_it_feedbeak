@@ -64,7 +64,9 @@ const ImageFeedback = ({ imagePhoto, setImagePhoto, srcImg, setSrcImg, pathRoute
     const onDrop = (pictureFiles, pictureDataUrl) => {
         setImagePhoto(pictureDataUrl);
     };
-
+    console.log('imagePhoto',imagePhoto);
+    console.log('scImg[0]',srcImg[0]);
+    console.log('length',srcImg.length);
 
     if (srcImg.length > 2) {
         return <div className={styles.noMorePhoto}>
@@ -92,30 +94,40 @@ const ImageFeedback = ({ imagePhoto, setImagePhoto, srcImg, setSrcImg, pathRoute
                                 <ImageUploader
                                     fileContainerStyle={fileContainerStyle}
                                     buttonStyles={buttonStyles}
-                                    withIcon={false}
+                                    withIcon={true}
                                     buttonText='Choose image'
                                     onChange={onDrop}
                                     imgExtension={['.jpg', '.gif', '.png', '.gif']}
                                     maxFileSize={5242880}
-                                    label=''
+                                    
                                 />
                             </div>
                     </div>    
-                    : <div className={styles.container}>
-                        <img src={imagePhoto} className={styles.img} />
-                        <div className={styles.buttonPhoto}>
+                    : (((srcImg.length!=0) && (JSON.stringify(srcImg[0]) === JSON.stringify(imagePhoto)))||
+                    ((srcImg.length>1) && (JSON.stringify(srcImg[1]) === JSON.stringify(imagePhoto)))) 
+                        ? <div className={styles.containerBoxDouble}>
+                            <h4>such a picture is duplicated</h4>
                             <button
-                                className={styles.photoButton}
-                                onClick={addImgArray}>
-                                <Link to={pathRoute}>Save picture</Link>
+                                    className={styles.photoButton}
+                                    onClick={handleNewPhoto}>
+                                    OK
                             </button>
-                            <button
-                                className={styles.photoButton}
-                                onClick={handleNewPhoto}>
-                                New picture
-                                    </button>
                         </div>
-                    </div>
+                        : <div className={styles.container}>
+                            <img src={imagePhoto} className={styles.img} />
+                            <div className={styles.buttonPhoto}>
+                                <button
+                                    className={styles.photoButton}
+                                    onClick={addImgArray}>
+                                    <Link to={pathRoute}>Save picture</Link>
+                                </button>
+                                <button
+                                    className={styles.photoButton}
+                                    onClick={handleNewPhoto}>
+                                    New picture
+                                </button>
+                            </div>
+                        </div>
                 }
             </div>
         )

@@ -76,7 +76,7 @@ const QRcodePoint = ({textFeedbeak, onChangeFeedbeak}) => {
         rate: countStar,
         date: new Date().toLocaleDateString(),
         time: new Date().toLocaleTimeString(),
-        text: textFeedbeak,
+        comment: textFeedbeak,
         answer: answer,
     };
     let jsonFeedbeak = JSON.stringify(feedbeakToJson);

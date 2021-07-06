@@ -1,4 +1,4 @@
-.container, .containerBox {
+.container, .containerBox, .containerBoxDouble {
     width: 100%;
     min-height: 90vh;
     display: flex;
@@ -6,11 +6,14 @@
     justify-content: center;
     background: linear-gradient(to right, #72db72, #d4e0d4);
 }
-.containerBox {
+.containerBox, .containerBoxDouble {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     height: 90vh;
+}
+.containerBoxDouble {
+    flex-direction: column;
 }
 .img {
     height: auto;
