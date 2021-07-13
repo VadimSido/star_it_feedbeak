@@ -18,11 +18,10 @@ const fileContainerStyle = {
     boxShadow: 'none',
 };
 const buttonStyles = {
-    background: 'none',
+    background: '#43b6da',
     width: '50vw',
     height: '100px',
-    border: '5px double #ffffff',
-    color: '#266926',
+    color: '#d9ebde',
     fontSize: '20px',
 }
 
@@ -64,9 +63,6 @@ const ImageFeedback = ({ imagePhoto, setImagePhoto, srcImg, setSrcImg, pathRoute
     const onDrop = (pictureFiles, pictureDataUrl) => {
         setImagePhoto(pictureDataUrl);
     };
-    console.log('imagePhoto',imagePhoto);
-    console.log('scImg[0]',srcImg[0]);
-    console.log('length',srcImg.length);
 
     if (srcImg.length > 2) {
         return <div className={styles.noMorePhoto}>
@@ -103,7 +99,7 @@ const ImageFeedback = ({ imagePhoto, setImagePhoto, srcImg, setSrcImg, pathRoute
                                 />
                             </div>
                     </div>    
-                    : (((srcImg.length!=0) && (JSON.stringify(srcImg[0]) === JSON.stringify(imagePhoto)))||
+                    : (((srcImg.length!==0) && (JSON.stringify(srcImg[0]) === JSON.stringify(imagePhoto)))||
                     ((srcImg.length>1) && (JSON.stringify(srcImg[1]) === JSON.stringify(imagePhoto)))) 
                         ? <div className={styles.containerBoxDouble}>
                             <h4>such a picture is duplicated</h4>

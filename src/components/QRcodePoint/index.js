@@ -71,16 +71,23 @@ const QRcodePoint = ({textFeedbeak, onChangeFeedbeak}) => {
             )
     },[]);
 
+    const feedback = new FormData;
+    feedback.append('fbo_id',idPoint);
+    feedback.append('stars',countStar);
+    feedback.append('date',new Date().toLocaleDateString()+' '+ new Date().toLocaleTimeString());
+    feedback.append('comment',textFeedbeak);
+    feedback.append('reaction_needed',answer);
 
     let feedbeakToJson = {
-        rate: countStar,
+        fbo_id: idPoint,
+        stars: countStar,
         date: new Date().toLocaleDateString(),
         time: new Date().toLocaleTimeString(),
         comment: textFeedbeak,
-        answer: answer,
+        reaction_needed: answer,
     };
     let jsonFeedbeak = JSON.stringify(feedbeakToJson);
-    console.log(jsonFeedbeak);
+
 
     const [webcamOnOff, setWebcamOnOff] = useState(false);
     const [imagePhoto, setImagePhoto] = useState('');
@@ -121,7 +128,8 @@ const QRcodePoint = ({textFeedbeak, onChangeFeedbeak}) => {
                     <ThanksForReview
                         countStar={countStar}
                         businessLogo={businessLogo}
-                        feedbeakToJson={feedbeakToJson} />
+                        feedbeakToJson={feedbeakToJson}
+                        feedback={feedback} />
                 </Route>
                 <Route path="/photo">
                     <ImageFeedback

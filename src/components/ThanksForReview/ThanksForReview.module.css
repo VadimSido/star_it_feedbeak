@@ -13,7 +13,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background: linear-gradient(to right, #d4e0d4, #72db72);
+    background: #a0d8a0;
+    border: none;
 }
 .rating:focus {
     outline: none;
@@ -26,7 +27,8 @@
     align-items: center;
     justify-content: space-around;
     font-weight: bold;
-    background: linear-gradient(to right, #d4e0d4, #72db72);
+    background: #a0d8a0;
+    border: none;
 }
 .containerReview >h3 {
     width: 80%;
@@ -38,7 +40,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to right, #72db72, #d4e0d4);
+    background: #a0d8a0;
+    border: none;
 }
 .containerWish >p, .containerReview >p {
     width: 80%;

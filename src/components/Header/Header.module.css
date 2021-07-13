@@ -5,7 +5,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background: linear-gradient(to right, #72db72, #d4e0d4);
+    background: #72db72;
 }
 .link {
     text-decoration: none;

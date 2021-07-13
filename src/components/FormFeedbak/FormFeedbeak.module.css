@@ -1,7 +1,7 @@
 .container {
     max-width: 100%;
     min-height: 60vh;
-    background: linear-gradient(to right, #d4e0d4, #72db72);
+    background: #a0d8a0;
 }
 .containerForm {
     width: 100%;
@@ -23,7 +23,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background: linear-gradient(to right, #72db72, #d4e0d4);
+    background: #a0d8a0;
 }
 .rating:focus {
     outline: none;
@@ -80,9 +80,8 @@
     margin-top: 50px;
     margin-right: auto;
     margin-left: auto;
-    border: 5px double #ffffff;
     border-radius: calc(20vw/2);
-    background: inherit;
+    background: #43b6da;
     font-size: 36px;
     color: #266926;
 }

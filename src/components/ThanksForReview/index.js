@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import ReactStars from "react-rating-stars-component";
 import styles from "./ThanksForReview.module.css";
 
-const ThankForReview = ({ countStar, logo_bisnesses, feedbeakToJson, srcImg }) => {
+const ThankForReview = ({ countStar, logo_bisnesses, feedbeakToJson, srcImg, feedback }) => {
 
     const [error, setError] = useState(null);
-    const formdata = new FormData;
+{/*    const formdata = new FormData;
     formdata.append("image", {srcImg});
     
     useEffect(() => {
@@ -23,15 +23,16 @@ const ThankForReview = ({ countStar, logo_bisnesses, feedbeakToJson, srcImg }) =
                 },
             );
     }, []);
+*/}
 
     useEffect(() => {
         const optionRequest = {
             method: 'POST',
-            headers: { 'Content-Type': 'multipart/form-data'},
-            body: formdata,
+
+            body: feedback,
             redirect: 'follow'
         };
-        fetch("https://reqres.in/api/users", optionRequest)
+        fetch("https://starit-api.herokuapp.com/api/feedback", optionRequest)
             .then(res => console.log('11',res.json))
             .then(
                 (res) => {console.log(res)},

@@ -3,7 +3,7 @@
 }
 .containerInfo {
     min-height: 30vh;
-    background: linear-gradient(to right, #d4e0d4, #72db72);
+    background: #a0d8a0;
     font-size: 36px;
     color: #026926;
     display: flex;
