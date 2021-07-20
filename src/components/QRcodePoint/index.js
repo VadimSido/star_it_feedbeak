@@ -71,10 +71,13 @@ const QRcodePoint = ({textFeedbeak, onChangeFeedbeak}) => {
             )
     },[]);
 
+    const date = new Date();
+    const dateFeedback = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+
     const feedback = new FormData;
     feedback.append('fbo_id',idPoint);
     feedback.append('stars',countStar);
-    feedback.append('date',new Date().toLocaleDateString()+' '+ new Date().toLocaleTimeString());
+    feedback.append('date',dateFeedback);
     feedback.append('comment',textFeedbeak);
     feedback.append('reaction_needed',answer);
 
