@@ -21,6 +21,7 @@ function App() {
         <QRcodePoint 
           textFeedbeak={textFeedbeak}
           onChangeFeedbeak={onChangeFeedbeak}
+          setTextFeedbeak={setTextFeedbeak}
         />
       </Route>
     </Router>

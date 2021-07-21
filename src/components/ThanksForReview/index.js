@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ReactStars from "react-rating-stars-component";
 import styles from "./ThanksForReview.module.css";
 
-const ThankForReview = ({ countStar, logo_bisnesses, feedbeakToJson, srcImg, feedback }) => {
+const ThankForReview = ({ countStar, logo_bisnesses, srcImg, feedback, setTextFeedbeak, setCountStar }) => {
 
     const [error, setError] = useState(null);
 {/*    const formdata = new FormData;
@@ -33,7 +33,8 @@ const ThankForReview = ({ countStar, logo_bisnesses, feedbeakToJson, srcImg, fee
             redirect: 'follow'
         };
         fetch("https://starit-api.herokuapp.com/api/feedback", optionRequest)
-            .then(res => console.log('11',res.json))
+            .then(res => {setTextFeedbeak('');
+                          setCountStar(0)  })
             .then(
                 (res) => {console.log(res)},
                 (error) => {setError(error)},
